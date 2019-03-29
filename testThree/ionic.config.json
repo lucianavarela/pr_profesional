@@ -1,5 +1,7 @@
 {
   "name": "testThree",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

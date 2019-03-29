@@ -1,6 +1,8 @@
 {
   "name": "testFive",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "7b109558"
 }

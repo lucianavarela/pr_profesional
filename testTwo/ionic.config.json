@@ -1,6 +1,8 @@
 {
   "name": "testTwo",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "7d2c5d52"
 }
