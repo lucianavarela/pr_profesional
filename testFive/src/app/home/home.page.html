@@ -1,14 +1,37 @@
-<ion-header>
+<ion-header class="header">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title>
-      Ionic Blank
+      Welcome
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+
+<ion-content class="content">
+  <ion-card color="light" class="welcome-card list" lines="none">
+    <div class="ion-padding">
+      <ion-img src="/assets/face.png"></ion-img>
+    </div>
+
+    <ion-row class="ion-justify-content-center">
+      <ion-text color="dark">
+        <h5>Michael Jeffords</h5>
+      </ion-text>
+    </ion-row>
+
+    <div class="margin">
+      <div class="fields">
+        <ion-input color="dark" type=password placeholder="Password"></ion-input>
+      </div>
+      <ion-button class="fields" expand="full">Login</ion-button>
+      <ion-row class="ion-justify-content-end" style="margin-right:1rem">
+        <a>Need help?</a>
+      </ion-row>
+    </div>
+
+  </ion-card>
+
 </ion-content>
