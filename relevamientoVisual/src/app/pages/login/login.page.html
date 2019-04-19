@@ -1,0 +1,29 @@
+
+<ion-content color="warning">
+    <div class="ion-padding margin">
+      <ion-img src="/assets/flow.png"></ion-img>
+    </div>
+  
+    <ion-list class="margin list" lines="none">
+      <ion-item class="input" color="warning">
+        <ion-input color="dark" type=text placeholder="Username" [(ngModel)]="username"></ion-input>
+      </ion-item>
+  
+      <ion-item class="input" color="warning">
+        <ion-input color="dark" type=password placeholder="Password" [(ngModel)]="password"
+        (keyup.enter)="login()" ></ion-input>
+      </ion-item>
+  
+      <ion-item color="warning">
+        <ion-label color="dark">Remember me</ion-label>
+        <ion-toggle color="secondary" checked></ion-toggle>
+      </ion-item>
+    </ion-list>
+  
+    <ion-row class="ion-justify-content-center margin">
+      <ion-button color="tertiary" (click)="login()">
+        <ion-icon  slot="icon-only" name="return-right"></ion-icon>
+      </ion-button>
+    </ion-row>
+  
+  </ion-content>

@@ -1,27 +1,36 @@
-<ion-content color="warning">
-  <div class="ion-padding margin">
-    <ion-img src="/assets/flow.png"></ion-img>
-  </div>
-
-  <ion-list class="margin list" lines="none">
-    <ion-item class="input" color="warning">
-      <ion-input color="dark" type=text placeholder="Username"></ion-input>
-    </ion-item>
-
-    <ion-item class="input" color="warning">
-      <ion-input color="dark" type=password placeholder="Password"></ion-input>
-    </ion-item>
-
-    <ion-item color="warning">
-      <ion-label color="dark">Remember me</ion-label>
-      <ion-toggle color="secondary" checked></ion-toggle>
-    </ion-item>
-  </ion-list>
-
-  <ion-row class="ion-justify-content-center margin">
-    <ion-button color="tertiary">
-      <ion-icon  slot="icon-only" name="return-right"></ion-icon>
-    </ion-button>
-  </ion-row>
-
-</ion-content>
+<ion-header class="header">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        Entrar
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="content">
+    <ion-card color="light" class="welcome-card list" lines="none">
+      <ion-row class="ion-justify-content-center ion-padding">
+        <div class="profile-img">
+        </div>
+      </ion-row>
+  
+      <div class="form-error">{{loginError}}</div>
+      <ion-row class="ion-justify-content-center">
+        <ion-text color="dark">
+          <h5>Luciana Varela</h5>
+        </ion-text>
+      </ion-row>
+  
+      <div class="margin">
+        <div class="fields">
+          <ion-input color="dark" type=password placeholder="Password" [(ngModel)]="password"></ion-input>
+        </div>
+        <ion-button class="fields" expand="full" (click)=login()>ENTRAR</ion-button>
+      </div>
+  
+    </ion-card>
+  
+  </ion-content>
+  
