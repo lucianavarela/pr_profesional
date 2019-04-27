@@ -1,5 +1,4 @@
 import { Injectable } from "@angular/core";
-import 'rxjs'
 import * as firebase from 'firebase/app';
 import { AngularFireAuth } from 'angularfire2/auth';
 
@@ -13,13 +12,19 @@ export class AuthService {
 		});
 	}
 
-  isLogged() {
-    return this.user != null;
-  }
+	isLogged() {
+		return this.afAuth.auth.currentUser != null;
+	}
+
+	getCurrentUserId() {
+		return this.afAuth.auth.currentUser ? this.afAuth.auth.currentUser.uid : null;
+	}
 
 	signInWithEmail(credentials) {
 		return this.afAuth.auth.signInWithEmailAndPassword(credentials.email,
-			 credentials.password);
+			credentials.password)
+			.then(user => {
+				this.user = user.user;
+			})
 	}
-
 }

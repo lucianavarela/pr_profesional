@@ -11,8 +11,8 @@ import { Router } from '@angular/router';
 })
 export class LoginPage {
 	loginError: string;
-	public username: string;
-  public password: string;	
+	public username: string = 'luli.varela25@gmail.com';
+  public password: string = '123456';	
 
 	constructor(
     private router: Router,
@@ -29,7 +29,7 @@ export class LoginPage {
 		this.auth.signInWithEmail(credentials)
 			.then(
 				() => {
-          this.router.navigateByUrl('')
+          this.router.navigateByUrl('home')
         },
 				error => alert(error.message)
 			);

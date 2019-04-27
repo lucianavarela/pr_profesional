@@ -12,10 +12,14 @@ import { AuthService } from './services/auth.service';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
 import { firebaseConfig } from '../config';
-import { LoginPage } from './pages/login/login.page';
 import { FormsModule } from '@angular/forms';
 import { LoginPageModule } from './pages/login/login.module';
-
+import { PhotosListPageModule } from './pages/photos-list/photos-list.module';
+import { Camera } from '@ionic-native/camera/ngx';
+import { File } from '@ionic-native/file/ngx';
+import { FirebaseService } from './services/firebase.service';
+import { ImgBoxComponent } from './pages/components/img-box/img-box.component';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,13 +30,18 @@ import { LoginPageModule } from './pages/login/login.module';
     IonicModule.forRoot(),
     AppRoutingModule,
     LoginPageModule,
-    AngularFireModule.initializeApp(firebaseConfig.fire),
+    PhotosListPageModule,
+    AngularFireModule.initializeApp(firebaseConfig),
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    FirebaseService,
     AuthService,
     AngularFireAuth,
+    AngularFireDatabase,
+    Camera,
+    File,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-button color="medium" href="/home">
+          <ion-icon slot="icon-only" name="camera"></ion-icon>
+        </ion-button>
+    </ion-buttons>
+    <ion-title>Fotos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container has-navbar-fixed-top" style="padding-top:2rem;">
+    <div *ngIf="fotos">
+      <div class="columns is-multiline">
+        <div *ngFor="let foto of fotos" class="column is-narrow">
+          <app-img-box [foto]="foto"></app-img-box>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

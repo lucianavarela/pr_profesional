@@ -1,14 +1,33 @@
-<ion-header class="header">
+<ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-button color="medium" href="/lista">
+        <ion-icon slot="icon-only" name="list"></ion-icon>
+      </ion-button>
     </ion-buttons>
-    <ion-title>
-      Bienvenido
-    </ion-title>
+    <ion-title>¿Qué querés subir?</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-row class="home-button">
+    <ion-button color="pink" (click)="takePicture('linda')">
+      <ion-row class="ion-justify-content-center margin">
+        <ion-img src="/assets/happy.svg" class="img"></ion-img>
+      </ion-row>
+    </ion-button>
+  </ion-row>
+  <ion-row class="home-button">
+    <ion-button color="light" (click)="takePicture('fea')" style="background-color:#ffccda!important">
+      <ion-row class="ion-justify-content-center margin">
+        <ion-img src="/assets/sad.svg" class="img"></ion-img>
+      </ion-row>
+    </ion-button>
+  </ion-row>
+  <div *ngIf="progress" class="splash">
+    <div class="spinner">
+      <div class="dot1"></div>
+      <div class="dot2"></div>
+    </div>
+  </div>
 </ion-content>
