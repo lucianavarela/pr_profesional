@@ -1,0 +1,27 @@
+<ion-content color="light">
+
+  <ion-list class="margin list" lines="none">
+    <ion-item class="my-input" color="light" lines="none">
+      <ion-input color="dark" type=text placeholder="Username" [(ngModel)]="username"></ion-input>
+    </ion-item>
+
+    <ion-item class="my-input" color="light" lines="none">
+      <ion-input color="dark" type=password placeholder="Contraseña" [(ngModel)]="password" (keyup.enter)="login()">
+      </ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-row class="ion-justify-content-center margin">
+    <button class="button is-danger is-outlined" (click)="login()">ENTRAR</button>
+  </ion-row>
+
+  <ion-row class="ion-justify-content-center margin">
+    <button class="button is-info" (click)="presentActionSheet()">
+      <ion-icon slot="icon-only" name="people"></ion-icon>
+    </button>
+  </ion-row>
+
+  <ion-row class="ion-justify-content-center margin">
+    <ion-img src="/assets/icon/favicon.png" class="img"></ion-img>
+  </ion-row>
+</ion-content>

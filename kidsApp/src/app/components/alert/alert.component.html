@@ -1,0 +1,14 @@
+<!-- The Modal -->
+<div id="myModal" class="modal" *ngIf="modalStatus">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="body">
+      <p>{{body}}</p>
+      <hr>
+    </div>
+    <div class="footer">
+      <ion-button expand="block" color="secondary" (click)="resolve()">OK</ion-button>
+    </div>
+  </div>
+
+</div>

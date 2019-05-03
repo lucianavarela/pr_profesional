@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FirebaseService } from 'src/app/services/firebase.service';
-import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
+import { FirebaseService } from '../../services/firebase/firebase.service';
 import { Image } from 'src/app/clases/foto';
 
 @Component({
@@ -10,18 +8,18 @@ import { Image } from 'src/app/clases/foto';
   styleUrls: ['./photos-list.page.scss'],
 })
 export class PhotosListPage implements OnInit {
-  fotos: any[];
-  public usuarios;
-  public currentUserId;
+  fotos: Image[];
+  usuarios: any[];
 
   constructor(
-    private router: Router,
-    private authService: AuthService,
     public sfirebase: FirebaseService) {
     this.sfirebase.GetAllImages().subscribe(images => {
       this.fotos = images;
+      
+      this.sfirebase.GetUsers().subscribe(usuarios => {
+        this.usuarios = usuarios;
+      });
     });
-    this.currentUserId = this.authService.getCurrentUserId();
   }
 
   ngOnInit() {

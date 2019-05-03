@@ -6,7 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { PhotosListPage } from './photos-list.page';
-import { ImgBoxComponent } from '../components/img-box/img-box.component';
+import { ImgBoxComponent } from '../../components/img-box/img-box.component';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 const routes: Routes = [
   {

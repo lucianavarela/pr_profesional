@@ -1,0 +1,36 @@
+
+.box{
+    margin: 30px;
+    padding: 2rem;
+    background-color: #d2d2d2;
+    border-radius: 5px;
+    position: relative;
+}
+
+.cualidad {
+    height: 5rem;
+    width: auto;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+.votos {
+    width: 5rem;
+    border-radius: 10px;
+    border: 1px solid gray;
+    background-color: white;
+    text-align: center;
+    margin-right: 5px;
+}
+
+.votos p {
+    font-size: 20px;
+    margin: 10%;
+}
+
+ion-card {
+    margin: 2rem;
+    position: relative;
+    border-radius: 5px;
+}

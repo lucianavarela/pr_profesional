@@ -1,8 +1,8 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar style="padding-top:0">
     <ion-buttons slot="start">
       <ion-button color="medium" href="/lista">
-        <ion-icon slot="icon-only" name="list"></ion-icon>
+        <ion-icon slot="icon-only" name="images"></ion-icon>
       </ion-button>
     </ion-buttons>
     <ion-title>¿Qué querés subir?</ion-title>
@@ -11,14 +11,14 @@
 
 <ion-content>
   <ion-row class="home-button">
-    <ion-button color="pink" (click)="takePicture('linda')">
+    <ion-button color="secondary" (click)="takePicture('linda')">
       <ion-row class="ion-justify-content-center margin">
         <ion-img src="/assets/happy.svg" class="img"></ion-img>
       </ion-row>
     </ion-button>
   </ion-row>
   <ion-row class="home-button">
-    <ion-button color="light" (click)="takePicture('fea')" style="background-color:#ffccda!important">
+    <ion-button color="medium" (click)="takePicture('fea')" style="background-color:#ffccda!important">
       <ion-row class="ion-justify-content-center margin">
         <ion-img src="/assets/sad.svg" class="img"></ion-img>
       </ion-row>

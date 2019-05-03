@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '../../services/auth/auth.service';
 import { Router } from '@angular/router';
 import * as firebase from 'firebase/app';
 import 'firebase/firestore';
@@ -7,8 +7,9 @@ import 'firebase/auth';
 import 'firebase/storage';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { File } from '@ionic-native/file/ngx';
-import { FirebaseService } from 'src/app/services/firebase.service';
+import { FirebaseService } from '../../services/firebase/firebase.service';
 import { Image } from '../../clases/foto';
+import { AlertService } from 'src/app/services/alert/alert.service';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +19,7 @@ import { Image } from '../../clases/foto';
 export class HomePage {
   public progress: boolean = false;
 
-  constructor(public service: AuthService, private router: Router,
+  constructor(public service: AuthService, private router: Router, private alertSerive: AlertService,
     private camera: Camera, private file: File, private fservice: FirebaseService) {
   }
 
@@ -41,8 +42,8 @@ export class HomePage {
           this.router.navigateByUrl('/lista');
         })
     } catch (e) {
-      console.log(e.message);
-      alert("File Upload Error " + e.message);
+      console.log(e);
+      this.alertSerive.create(e);
     }
   }
 
@@ -74,7 +75,10 @@ export class HomePage {
             imgBlob
           });
         })
-        .catch(e => reject(e));
+        .catch(e => {
+          this.alertSerive.create(e.message);
+          reject(e)
+        });
     });
   }
 
@@ -83,6 +87,7 @@ export class HomePage {
    * @param _imageBlobInfo
    */
   uploadToFirebase(_imageBlobInfo) {
+    this.progress = true;
     return new Promise((resolve, reject) => {
       let fileRef = firebase.storage().ref("images/" + _imageBlobInfo.fileName);
       let uploadTask = fileRef.put(_imageBlobInfo.imgBlob);
@@ -93,7 +98,7 @@ export class HomePage {
           this.progress = true;
         },
         _error => {
-          console.log(_error);
+          this.alertSerive.create(_error.message);
           reject(_error);
         },
         () => {

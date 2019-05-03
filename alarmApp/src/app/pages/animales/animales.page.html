@@ -1,0 +1,30 @@
+<ion-header class="ion-justify-content-center">
+  <ion-toolbar style="padding-top:0">
+    <ion-title>Animales</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+    <div class="container has-navbar-fixed-top" style="margin: 0 2rem !important">
+    <div class="columns is-multiline is-mobile">
+      <div *ngFor="let option of options" class="column is-narrow">
+        <app-img-box [option]="option" [category]="category"></app-img-box>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-tab-bar slot="bottom">
+  <ion-tab-button tab="numeros" routerLink="/numeros">
+    <ion-label>Numeros</ion-label>
+    <ion-icon name="remove-circle" class="numero-icon"></ion-icon>
+  </ion-tab-button>
+  <ion-tab-button tab="animales" routerLink="/animales">
+    <ion-label>Animales</ion-label>
+    <ion-icon name="paw"></ion-icon>
+  </ion-tab-button>
+  <ion-tab-button tab="colores" routerLink="/colores">
+    <ion-label>Colores</ion-label>
+    <ion-icon name="brush"></ion-icon>
+  </ion-tab-button>
+</ion-tab-bar>

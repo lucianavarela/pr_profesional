@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar style="padding-top:0">
     <ion-buttons slot="start">
         <ion-button color="medium" href="/home">
           <ion-icon slot="icon-only" name="camera"></ion-icon>
@@ -9,12 +9,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="container has-navbar-fixed-top" style="padding-top:2rem;">
-    <div *ngIf="fotos">
+<ion-content color="light">
+  <div class="container has-navbar-fixed-top">
+    <div *ngIf="fotos&&usuarios">
       <div class="columns is-multiline">
         <div *ngFor="let foto of fotos" class="column is-narrow">
-          <app-img-box [foto]="foto"></app-img-box>
+          <app-img-box [foto]="foto" [usuarios]="usuarios"></app-img-box>
         </div>
       </div>
     </div>

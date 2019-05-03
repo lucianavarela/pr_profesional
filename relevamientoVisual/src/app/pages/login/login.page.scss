@@ -1,5 +1,5 @@
 .margin {
-    margin: 2rem 0;
+    margin: 1.5rem 0;
 }
 
 .list {
@@ -26,4 +26,8 @@ ion-item {
     --highlight-color-focused: none;
     --full-highlight-height: none;
     --inset-highlight-height: none;
+}
+
+.action-sheet-group {
+    text-align: center;
 }
